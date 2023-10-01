@@ -1,63 +1,58 @@
 import 'package:flutter/material.dart';
 
+import '../../../features_auth/domain/entities/client.dart';
+
 class UserInformation extends StatelessWidget {
-  const UserInformation({Key? key}) : super(key: key);
+  Client client;
+  UserInformation({Key? key, required this.client}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("Username",
+          children: [
+            const Text("Username",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text("Gaith_ko"),
+            Text("${client.firstName!} ${client.lastName!}"),
           ],
         ),
         const Divider(thickness: 1, color: Colors.black38),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("Email",
+          children: [
+            const Text("Email",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text("gaith@kozali@gmail.com"),
+            Text(client.email!),
           ],
         ),
         const Divider(thickness: 1, color: Colors.black38),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("phone",
+          children: [
+            const Text("phone",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text("+963943737379"),
+            Text(client.phone!),
           ],
         ),
         const Divider(thickness: 1, color: Colors.black38),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("Date of brith",
+          children: [
+            const Text("Date of brith",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text("March 27,2002"),
+            Text(client.date!),
           ],
         ),
         const Divider(thickness: 1, color: Colors.black38),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Text("Address",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text("Canada"),
-          ],
-        ),
-        const Divider(thickness: 1, color: Colors.black38),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("Account",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text("Gold"),
+            Text("address"),
           ],
         ),
       ],

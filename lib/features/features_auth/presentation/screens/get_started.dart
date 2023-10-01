@@ -2,13 +2,13 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:travel_app/models/city_data.dart';
-import 'package:travel_app/screens/sign_in.dart';
+import 'package:travel_app/features/features_auth/presentation/screens/sign_in.dart';
 import 'package:speech_to_text/speech_to_text.dart';
-import 'package:travel_app/screens/sign_up.dart';
+import 'package:travel_app/features/features_auth/presentation/screens/sign_up.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({Key? key}) : super(key: key);
-  static const String route ="GetStarted";
+  static const String route = "GetStarted";
 
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -148,7 +148,7 @@ class GetStarted extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                         SignUp(),
+                        SignUp(),
                     reverseTransitionDuration: Duration.zero,
                     transitionDuration: const Duration(milliseconds: 500),
                     transitionsBuilder:
@@ -178,7 +178,7 @@ class GetStarted extends StatelessWidget {
                   style: TextStyle(color: Colors.black87)),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => SignIn(),
