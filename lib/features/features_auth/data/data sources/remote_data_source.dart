@@ -4,7 +4,7 @@ import 'package:travel_app/features/features_auth/data/models/client_model.dart'
 import '../../domain/entities/client.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-abstract class RemoteDataSource {
+abstract class RemoteDataSourceAuth {
   Future<ClientModel> signInWithGoogle();
   Future<void> anonymousSignIn();
   Future<ClientModel> signInWithEmailAndPassword(String email, String password);
@@ -14,7 +14,7 @@ abstract class RemoteDataSource {
 // implements from the RemoteDataSource to save the form of
 // function after make any update of code work of it
 
-class RemoteDataSourceFireBase implements RemoteDataSource {
+class RemoteDataSourceAuthFireBase implements RemoteDataSourceAuth {
   User? client;
   @override
   Future anonymousSignIn() async {

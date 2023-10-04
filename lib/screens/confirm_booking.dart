@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:travel_app/widgets/dash_lines.dart';
+import 'package:travel_app/features/feature_hotels/presentation/widgets/dash_lines.dart';
 import 'package:travel_app/widgets/service.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/pop_icon.dart';

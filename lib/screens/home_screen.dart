@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/features/feature_profile/presentation/screens/profile.dart';
 import 'booking_screen.dart';
 import 'favourites.dart';
-import 'hotels_screen.dart';
+import '../features/feature_hotels/presentation/screens/hotels_screen.dart';
 import 'my_trips.dart';
 import 'package:travel_app/core/design_color.dart';
 

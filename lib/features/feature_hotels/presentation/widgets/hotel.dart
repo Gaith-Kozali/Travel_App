@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:travel_app/screens/rooms_screen.dart';
+import '../../../../core/design_color.dart';
+import '../../domain/entities/hotel.dart';
 
-import '../core/design_color.dart';
-
-class Hotel extends StatelessWidget {
-  const Hotel({Key? key}) : super(key: key);
+class HotelWidget extends StatelessWidget {
+  Hotel hotel;
+   HotelWidget({Key? key,required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +42,9 @@ class Hotel extends StatelessWidget {
                                 SizedBox(
                                   width: width * 0.02,
                                 ),
-                                const Text(
-                                  "paris",
-                                  style: TextStyle(
+                                 Text(
+                                  hotel.location,
+                                  style: const TextStyle(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
                                       fontSize: 19),
@@ -62,9 +63,9 @@ class Hotel extends StatelessWidget {
                             children: [
                                Icon(Icons.hotel_outlined,color: color),
                               SizedBox(width: width * 0.02),
-                              const Text(
-                                "Four session",
-                                style: TextStyle(
+                               Text(
+                                hotel.name,
+                                style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w600),
                               )
                             ],
@@ -72,7 +73,7 @@ class Hotel extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: width * 0.07),
                         child: RatingBar.builder(
-                          initialRating: 3,
+                          initialRating: hotel.evaluation,
                           direction: Axis.horizontal,
                           itemCount: 5,
                           itemPadding:

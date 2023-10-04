@@ -1,4 +1,9 @@
 import 'package:get_it/get_it.dart';
+import 'package:travel_app/features/feature_hotels/data/data%20sources/remote_data_hotel.dart';
+import 'package:travel_app/features/feature_hotels/data/repositories/hotel_repository_imp.dart';
+import 'package:travel_app/features/feature_hotels/domain/repositories/hotel_repository.dart';
+import 'package:travel_app/features/feature_hotels/domain/use%20cases/get_hotels_data.dart';
+import 'package:travel_app/features/feature_hotels/presentation/bloc/hotels_bloc.dart';
 import 'package:travel_app/features/features_auth/data/data%20sources/remote_data_source.dart';
 import 'package:travel_app/features/features_auth/domain/repositories/auth_repository.dart';
 import 'package:travel_app/features/features_auth/domain/use%20cases/anonymous_signin.dart';
@@ -29,5 +34,11 @@ Future<void> init() async {
   // repositoryImp
   sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImp(sl()));
   // data source in authentication
-  sl.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceFireBase());
+  sl.registerLazySingleton<RemoteDataSourceAuth>(
+      () => RemoteDataSourceAuthFireBase());
+// injection bloc hotels
+  sl.registerFactory(() => HotelsBloc(getHotelsDataUseCase: sl()));
+  sl.registerLazySingleton(() => GetHotelsDataUseCase(sl()));
+  sl.registerLazySingleton<HotelRepository>(() => HotelRepositoryImp(sl()));
+  sl.registerLazySingleton<RemoteDataHotel>(() => RemoteDataHotelImp());
 }

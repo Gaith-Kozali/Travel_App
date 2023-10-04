@@ -8,7 +8,7 @@ import 'package:travel_app/features/features_auth/domain/repositories/auth_repos
 
 class AuthRepositoryImp implements AuthRepository {
   AuthRepositoryImp(this.remoteDataSource);
-  RemoteDataSource remoteDataSource;
+  RemoteDataSourceAuth remoteDataSource;
   @override
   Future<Either<Failure, Unit>> anonymousSignIn() async {
     try {
