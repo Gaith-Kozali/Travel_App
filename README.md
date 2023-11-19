@@ -1,10 +1,13 @@
-![Screenshot_20230923_233315](https://github.com/Gaith-Kozali/travel_app/assets/142360873/e4d9c09e-9794-4b2d-ad6a-4bd7c4daa4c4)# travel_app
 
-App for travel connected to Firebase to make athentications and get hotels data .
-I am builded the code using clean architecture and bloc state managment to have clean code and better to readable.
-can Convert audio to text .
-the ui/ux from behance  https://www.behance.net/gallery/140876177/Travel-App-UX-UI-Case-Study?tracking_source=search_projects|booking+app
-The application is for training only and for the client to know my experience and capabilities.
+-App for travel connected to Firebase to make athentications and get hotels data .
+
+-I am builded the code using clean architecture and bloc state managment to have clean code and better to readable.
+
+-can Convert audio to text .
+
+-the ui/ux from behance  https://www.behance.net/gallery/140876177/Travel-App-UX-UI-Case-Study?tracking_source=search_projects|booking+app .
+
+-The application is for training only and for the client to know my experience and capabilities.
 
 
 
